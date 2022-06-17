@@ -5,4 +5,4 @@ A discord bot made in python that sends fake information using artificial intell
 
 
 ### Here is an example of how it works.
-<img src='https://i.ibb.co/SnkZb0f/image.png' style='border-radius: 0.4rem; width: 30rem' />
+<img src='https://i.ibb.co/fxDm5V8/image-2.png' style='border-radius: 0.4rem; width: 30rem' />
