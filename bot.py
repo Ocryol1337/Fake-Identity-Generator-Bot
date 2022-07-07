@@ -9,6 +9,7 @@ client = discord.Client()
 client = commands.Bot(command_prefix = '!')
 
 
+
 @client.command()
 async def fakeidentitygenerator(ctx):
     r       = requests.get(f"https://api.namefake.com/")
@@ -37,10 +38,19 @@ async def fakeidentitygenerator(ctx):
     for field in fields:
         if field['value']:
             em.add_field(name=field['name'], value=field['value'], inline=True)
+        if 'female' in fig['pict']:
+          em.set_thumbnail(url=random.choice(female))
+        elif 'male' in fig['pict']:
+          em.set_thumbnail(url=random.choice(male))
 
     em.set_footer(text='\u200b')
     em.timestamp = datetime.datetime.utcnow()  
     em.set_footer(text='Made By ocryol#8123')
     await ctx.send(embed = em)
+
+female = ["https://i.ibb.co/RB74HGB/image-5.jpg", "https://i.ibb.co/V31dTBG/image-8.jpg", "https://i.ibb.co/rmp46zF/image-11.jpg", "https://i.ibb.co/25t47rn/image-13.jpg", "https://i.ibb.co/Jk6QNfr/image-15.jpg"]
+
+
+male = ["https://i.ibb.co/86GmJbs/image-4.jpg", "https://i.ibb.co/BgxCKwR/image-9.jpg", "https://i.ibb.co/khsWhg2/image-10.jpg", "https://i.ibb.co/qRnzq9v/image-12.jpg", "https://i.ibb.co/NsDJYz1/image-14.jpg"]
 
 client.run("TOKEN HERE")
